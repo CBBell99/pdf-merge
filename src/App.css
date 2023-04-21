@@ -1,4 +1,12 @@
-body {
-  background: rgb(165, 146, 202);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+body {
+  /* background: var(--purple); */
+  font-family: 'Poppins', sans-serif;
+  background: #4C4C4C;
+  color: #7a7a7a
+  /* color: #FF7F50 */
+}
+/* Dominant Color: #4C4C4C (60%)
+Secondary Color: #7A7A7A (30%)
+Accent Color: #FF7F50 (10%) */
