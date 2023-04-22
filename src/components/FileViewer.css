@@ -1,0 +1,29 @@
+.outer-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  margin: 15px;
+  border: 1px solid var(--off-white);
+  width: 500px;
+  border-radius: 10px;
+}
+
+.inner-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  word-wrap: break-word;
+  max-width: 100%;
+}
+
+.inner-container {
+  text-overflow: ellipsis;
+}
+.icon {
+  font-size: 1.8rem;
+}
+
+.icon:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
