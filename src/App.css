@@ -4,12 +4,13 @@
   --dark-grey: #4C4C4C;
   --light-grey: #7A7A7A;
   --accent-color: #FF7F50;
+  --off-white: rgb(231, 227, 227);  
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   background: var(--dark-grey);
-  color: var(--light-grey)  
+  color: var(--off-white)
 }
 
 .main {
@@ -17,4 +18,5 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  width: 100%
 }
