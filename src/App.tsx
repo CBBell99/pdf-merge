@@ -4,7 +4,7 @@ import { PDFDocument } from 'pdf-lib';
 import './App.css';
 import FileInput from './components/FileInput';
 import CombineButton from './components/CombineButton';
-import FileViewer from './components/FileViewer';
+import FileItem from './components/FileItem';
 import Footer from './components/Footer';
 
 function App() {
@@ -54,7 +54,7 @@ function App() {
         <p>or</p>
         <h3>How I spent an afternoon refusing to pay for an Adobe License</h3>
         {files.length === 0 && <FileInput handleFileInput={handleFileInput} />}
-        <FileViewer files={files} onDelete={handleDeletePdf} />
+        <FileItem files={files} onDelete={handleDeletePdf} />
         {files.length >= 1 && (
           <CombineButton mergePdf={handleCombineButtonClick} />
         )}

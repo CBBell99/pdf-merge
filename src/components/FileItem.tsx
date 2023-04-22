@@ -1,4 +1,4 @@
-import './FileViewer.css';
+import './FileItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
@@ -7,11 +7,11 @@ interface Props {
   onDelete: (index: number) => void;
 }
 
-function FileViewer({ files, onDelete }: Props) {
+function FileItem({ files, onDelete }: Props) {
   console.log('viewer', files);
 
   const pdfFiles = files.map((file, index) => (
-    <div key={file.name} className='outer-container'>
+    <div key={file.name} className='outer-container' draggable>
       <div className='inner-container'>
         <h3>
           {file.name.length > 35 ? `${file.name.slice(0, 34)}...` : file.name}
@@ -28,4 +28,4 @@ function FileViewer({ files, onDelete }: Props) {
   return <div>{pdfFiles}</div>;
 }
 
-export default FileViewer;
+export default FileItem;
