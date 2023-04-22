@@ -16,9 +16,6 @@
   max-width: 100%;
 }
 
-.inner-container {
-  text-overflow: ellipsis;
-}
 .icon {
   font-size: 1.8rem;
 }

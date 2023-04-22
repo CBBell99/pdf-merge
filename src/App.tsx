@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
-import './App.css'
+import { PDFDocument } from 'pdf-lib';
+import './App.css';
 import FileInput from './components/FileInput';
 import CombineButton from './components/CombineButton';
 import FileViewer from './components/FileViewer';
-import { PDFDocument } from 'pdf-lib';
+import Footer from './components/Footer';
 
 function App() {
   const [files, setFiles] = useState<File[]>([]);
@@ -39,8 +40,8 @@ function App() {
   };
 
   const handleDeletePdf = (index: number) => {
-    setFiles(prev => {
-      const filesCopy = [...prev];
+    setFiles(prevFiles => {
+      const filesCopy = [...prevFiles];
       filesCopy.splice(index, 1);
       return filesCopy;
     });
@@ -48,12 +49,17 @@ function App() {
 
   return (
     <div className='main'>
-      <h1>PDF Merge</h1>
-      {files.length === 0 && <FileInput handleFileInput={handleFileInput} />}
-      <FileViewer files={files} onDelete={handleDeletePdf} />
-      {files.length >= 1 && (
-        <CombineButton mergePdf={handleCombineButtonClick} />
-      )}
+      <div className='container'>
+        <h1>PDF Merge</h1>
+        <p>or</p>
+        <h3>How I spent an afternoon refusing to pay for an Adobe License</h3>
+        {files.length === 0 && <FileInput handleFileInput={handleFileInput} />}
+        <FileViewer files={files} onDelete={handleDeletePdf} />
+        {files.length >= 1 && (
+          <CombineButton mergePdf={handleCombineButtonClick} />
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }
