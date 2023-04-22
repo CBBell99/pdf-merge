@@ -38,15 +38,22 @@ function App() {
     window.open(pdfUrl);
   };
 
+  const handleDeletePdf = (index: number) => {
+    setFiles(prev => {
+      const filesCopy = [...prev];
+      filesCopy.splice(index, 1);
+      return filesCopy;
+    });
+  };
+
   return (
     <div className='main'>
       <h1>PDF Merge</h1>
       {files.length === 0 && <FileInput handleFileInput={handleFileInput} />}
-      <FileViewer files={files} />
+      <FileViewer files={files} onDelete={handleDeletePdf} />
       {files.length >= 1 && (
         <CombineButton mergePdf={handleCombineButtonClick} />
       )}
-      {/* <CombineButton mergePdf={handleCombineButtonClick} /> */}
     </div>
   );
 }
