@@ -11,8 +11,7 @@ function App() {
 
   const handleFileInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files ?? []);
-    setFiles(prev => [...prev, ...selectedFiles]);
-    console.log(selectedFiles);
+    setFiles(prev => [...prev, ...selectedFiles.reverse()]);
   };
 
   const handleCombineButtonClick = async () => {
