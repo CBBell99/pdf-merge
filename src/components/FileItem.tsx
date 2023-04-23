@@ -2,10 +2,10 @@ import './FileItem.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 
-interface Props {
+type Props = {
   files: File[];
   onDelete: (index: number) => void;
-}
+};
 
 function FileItem({ files, onDelete }: Props) {
   console.log('viewer', files);
